@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="1">
+    <tbody>
+    <tr>
+        <th>Product</th>
+        <th>Cost</th>
+    </tr>
+    <tr>
+        <td>Beer</td>
+        <td>2.88</td>
+    </tr>
+    <tr>
+        <td>Fries</td>
+        <td>2.15</td>
+    </tr>
+    <tr>
+        <td>Burger</td>
+        <td>4.59</td>
+    </tr>
+    <tr>
+        <td>Total:</td>
+        <td id="sum"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<button onclick="sum()">Sum the Numbers from <strong>Cost</strong></button>
+
+<script>
+    function sum() {
+        let rows = document.querySelectorAll("table tr td:last-child");
+        let sum = 0;
+        for (let i = 0; i < rows.length-1; i++) {
+            sum += Number(rows[i].textContent);
+        }
+
+        document.getElementById("sum").textContent = sum;
+    }
+</script>
+
+</body>
+</html>
